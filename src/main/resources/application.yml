@@ -12,7 +12,7 @@ server:
 spring:
     application:
         name: sboard
-        version: 0.0.1
+        version: ${version}
     datasource:
         driver-class-name: oracle.jdbc.driver.OracleDriver
         password: 1234
@@ -30,6 +30,10 @@ spring:
             hibernate:
                 format_sql: true
                 show_sql: true
-jwt:
-  issuer: tmfflavndn@gmail.com
-  secret: 1A9782317F6D854D4E2358466B719101
+
+    security:
+      user:
+        name: user
+        password: 1234
+        roles: ADMIN
+
