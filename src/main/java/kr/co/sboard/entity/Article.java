@@ -31,4 +31,12 @@ public class Article {
 
     @CreationTimestamp
     private LocalDateTime wdate;
+
+    // 추가 필드
+    @Transient
+    private String nick;
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
 }

@@ -29,6 +29,10 @@ public class ArticleDTO {
     private String reg_ip;
     private String wdate;
 
+    public String getWdate() {
+        return wdate.substring(2, 16).replace("T", " ");
+    }
+
     // 파일업로드
     private MultipartFile file1;
     private MultipartFile file2;
@@ -36,4 +40,7 @@ public class ArticleDTO {
     public List<MultipartFile> getFiles() {
         return List.of(file1, file2);
     }
+
+    // 추가필드
+    private String nick;
 }
