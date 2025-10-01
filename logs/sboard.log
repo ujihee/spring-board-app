@@ -23542,3 +23542,8 @@ org.springframework.beans.NotReadablePropertyException: Invalid property 'princi
 2025-10-01T12:53:40.151+09:00  INFO 8528 --- [sboard] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2025-10-01T12:53:40.183+09:00  INFO 8528 --- [sboard] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/sboard'
 2025-10-01T12:53:40.191+09:00  INFO 8528 --- [sboard] [restartedMain] kr.co.sboard.SboardApplication           : Started SboardApplication in 5.354 seconds (process running for 6.02)
+2025-10-01T12:59:17.971+09:00  INFO 8528 --- [sboard] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-01T12:59:17.976+09:00  INFO 8528 --- [sboard] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-01T12:59:17.980+09:00  INFO 8528 --- [sboard] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-01T12:59:17.983+09:00  INFO 8528 --- [sboard] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-01T12:59:18.084+09:00  INFO 8528 --- [sboard] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
