@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 //@Setter
@@ -26,11 +27,16 @@ public class Article {
     private int comment_cnt;
     private int file_cnt;
     private int hit_cnt;
+
     private String writer;
     private String reg_ip;
 
     @CreationTimestamp
     private LocalDateTime wdate;
+
+    //관계설정 안하면 join 해야햄
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "ano")
+    private List<File> fileList;
 
     // 추가 필드
     @Transient

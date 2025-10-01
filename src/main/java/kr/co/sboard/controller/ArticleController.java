@@ -50,7 +50,12 @@ public class ArticleController {
         return "article/searchList";
     }
     @GetMapping("/article/view")
-    public String view(){
+    public String view(int ano, Model model){
+        log.info("ano = {}", ano);
+
+        ArticleDTO articleDTO = articleService.getArticle(ano);
+        model.addAttribute(articleDTO);
+
         return "article/view";
     }
     @GetMapping("/article/write")
