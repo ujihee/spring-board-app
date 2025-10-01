@@ -24,6 +24,7 @@ class ArticleRepositoryTest {
     ArticleRepository articleRepository;
 
     @Test
+    @Transactional
     void test1(){
 
         PageRequestDTO pageRequestDTO = PageRequestDTO.builder().build();
