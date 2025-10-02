@@ -5,6 +5,7 @@ import kr.co.sboard.dto.ArticleDTO;
 import kr.co.sboard.dto.PageRequestDTO;
 import kr.co.sboard.dto.PageResponseDTO;
 import kr.co.sboard.entity.Article;
+import kr.co.sboard.mapper.ArticleMapper;
 import kr.co.sboard.repository.ArticleRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,26 @@ public class ArticleService {
 
     private final ArticleRepository articleRepository;
     private final ModelMapper modelMapper;
+
+    private final ArticleMapper articleMapper;
+
+    public PageResponseDTO selectArticleAll(PageRequestDTO pageRequestDTO) {
+        //MyBatis 처리
+        List<ArticleDTO> dtoList = articleMapper.selectAll(pageRequestDTO);
+
+        int total = articleMapper.selectCountTotal(pageRequestDTO);
+
+        return PageResponseDTO.builder()
+                .pageRequestDTO(pageRequestDTO)
+                .dtoList(dtoList)
+                .total(total)
+                .build();
+
+    }
+
+    public int selectCountTotal(PageRequestDTO pageRequestDTO) {
+        return articleMapper.selectCountTotal(pageRequestDTO);
+    }
 
     public ArticleDTO getArticle(int ano){
 
